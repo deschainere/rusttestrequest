@@ -10,12 +10,13 @@ async fn main() {
 
     let start = Instant::now();
 
+    // Формируем JSON-данные, как в Go-коде
     let data = json!({
         "ids": [item_id],
         "partner": "359688187",
         "token": "YAwTGWnG",
         "max_price": price,
-        "custom_id": item_id
+        "custom_id": item_id.to_string() // Преобразуем custom_id в строку
     });
 
     let client = Client::new();
